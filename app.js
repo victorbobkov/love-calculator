@@ -1,3 +1,7 @@
+const firstName = document.querySelector('#input1')
+const secondName = document.querySelector('#input2')
+const button = document.querySelector('button')
+
 const options = {
     method: 'GET',
     headers: {
@@ -6,7 +10,11 @@ const options = {
     }
 }
 
-fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=Alice&fname=John', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err))
+function getResult() {
+    fetch(`https://love-calculator.p.rapidapi.com/getPercentage?sname=${firstName.value}&fname=${secondName.value}`, options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err))
+}
+
+button.addEventListener('click', getResult)
