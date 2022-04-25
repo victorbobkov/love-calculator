@@ -6,14 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Love Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <h3>First Name</h3>
-        <input type="text" id="input1">
-        <h3>Second Name</h3>
-        <input type="text" id="input2">
-        <button>Click!</button>
+    <div class="container">
+        <div class="content">
+            <img src="love-logo.png" alt="love-logo">
+            <h1>Love Calculator</h1>
+            <div class="inputarea">
+                <input type="text" placeholder="Your Name" id="input1" >
+                <input type="text" placeholder="Your Lover" id="input2">
+            </div>
+            <button href="#">See your match!</button>
+            <p id="print">Your relationship result here</p>
+            <p id="statement"></p>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
