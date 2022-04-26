@@ -24,7 +24,7 @@ async function calculateLove() {
          printResultText.textContent = 'Please enter valid name'
       } else {
          printResultText.textContent = resultObject.result
-         printPercentage.textContent = `${resultObject.percentage}%`
+         printPercentage.textContent = `Your Match Score ${resultObject.percentage}%`
       }
    } catch (e) {
       console.log('Error:', e)
