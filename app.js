@@ -2,6 +2,9 @@ const firstName = document.querySelector('#input1')
 const secondName = document.querySelector('#input2')
 const button = document.querySelector('button')
 
+let printResultText = document.querySelector('#print')
+let printPercentage = document.querySelector('#statement')
+
 const options = {
    method: 'GET',
    headers: {
@@ -17,8 +20,12 @@ async function calculateLove() {
    try {
       const resultObject = await response.json()
       console.log(resultObject)
-      console.log(resultObject.result)
-      console.log(resultObject.percentage)
+      if (resultObject.fname === '' || resultObject.sname === '') {
+         printResultText.textContent = 'Please enter valid name'
+      } else {
+         printResultText.textContent = resultObject.result
+         printPercentage.textContent = `${resultObject.percentage}%`
+      }
    } catch (e) {
       console.log('Error:', e)
    }
